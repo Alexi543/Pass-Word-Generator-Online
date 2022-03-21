@@ -14,19 +14,13 @@ const generateNumber = (min = 0, max) =>
 
 const getInputAll = () => 
 {
-    data.asciiLow.value = clearInput(asciiLow.value);
+    for (let i = 0; i < data.inputs.path.length; i++)
+    {
+        let clear = clearInput(data.inputs.variables[i].value);
+        data[data.inputs.path[i]].value = clear;
+    }
 
-    console.log(data.asciiLow.value);
-
-    // for (let i = 0; i < data.inputs.path.length; i++)
-    // {
-    //     let dataPath = data.inputs.path[i];
-    //     let dataVar = data.inputs.variables[i];
-
-    //     dataPath.value = clearInput(dataVar.value);
-    // }
-
-    checkInput();
+    console.log(data);
 }
 
 const clearInput = (input) => 
@@ -40,7 +34,7 @@ const clearInput = (input) =>
 
         if (input !== []) 
         {
-            input = parseInt(input);
+            input = parseInt(String(input).replace(",", ""));
             return input;
         }
     }
