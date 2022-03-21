@@ -7,9 +7,9 @@ const numbers = document.getElementById("num");
 const space = document.getElementById("space");
 const passWords = document.getElementById("passwords-num");
 
-const generateNumber = (min = 0, max) =>
+const randrange = (min = 0, max) =>
 {
-    return Math.floor(Math.random() * (max * min + 1) + min);
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 const getInputAll = () => 
@@ -20,7 +20,7 @@ const getInputAll = () =>
         data[data.inputs.path[i]].value = clear;
     }
 
-    console.log(data);
+    checkInput();
 }
 
 const clearInput = (input) => 
@@ -63,7 +63,46 @@ buttons.forEach(button =>
         {
             getInputAll();
 
-            let carateres = [];
+            let allPassWords = "";
+
+            for (let passWordGen = 1; passWordGen <= data.passWords.value; passWordGen++)
+            {  
+                let passWord = [];
+                let out = "";
+                
+                data.inputs.caraVals.forEach(path =>
+                {
+                    let caraters = data[path];
+    
+                    for (let i = 0; i < caraters.value; i++)
+                    {
+                        let letter;
+    
+                        do 
+                        {
+                            letter = caraters.list[randrange(0, caraters.list.length - 1)];
+                        } while (letter === undefined);
+    
+                        passWord.push(letter);
+                    }
+                })
+    
+                passWord = passWord.sort(() => Math.random() - 0.5);
+                
+                passWord.forEach(carater => 
+                {
+                    out += carater;
+                })
+                
+                allPassWords += (`${passWordGen}) ${out}`);
+                allPassWords += "<br>"
+            }
+
+            output.innerHTML =  allPassWords;
+        } 
+        else if (button.id === "clear-all")
+        {
+            
         }
     })
-});
+})
