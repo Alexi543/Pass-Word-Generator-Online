@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pass Word</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="window">
+        <div id="title-box">
+            <h1 id="title">
+                <strong>
+                    Pass Word Generator
+                </strong>
+            </h1>
+        </div>
+
+        <div id="output-box">
+            <h2 id="output">
+                OUTPUT
+            </h2>
+        </div>
+
+        <div id="inputs">
+            <p class="one-line">
+                <strong>
+                    Ascii Lower Case
+                </strong>
+            </p>
+            <input type="text" id="letters-low" class="txt" placeholder="3" maxlength="2">
+            <br>
+            <p class="one-line">
+                <strong>
+                    Ascii Upper Case
+                </strong>
+            </p>
+            <input type="text" id="letters-upper" class="txt" placeholder="3" maxlength="2">
+            <br>
+            <p class="one-line">
+                <strong>
+                    Puncutation
+                </strong>
+            </p>
+            <input type="text" id="Punctuation" class="txt" placeholder="3" maxlength="2">
+            <br>
+            <p class="one-line">
+                <strong>
+                    Numbers
+                </strong>
+            </p>
+            <input type="text" id="num" class="txt" placeholder="3" maxlength="2">
+            <br>
+            <p class="one-line">
+                <strong>
+                    Spaces
+                </strong>
+            </p>
+            <input type="text"  id="space" class="txt" placeholder="3" maxlength="2">
+            <br>
+            <p class="one-line">
+                <strong>
+                    PassWords
+                </strong>
+            </p>
+            <input type="text" id="passwords-num" class="txt" placeholder="1" maxlength="2">
+        </div>
+
+        <div id="buttons">
+            <p class="one-line">
+                <strong>
+                    Inputs
+                </strong>
+            </p>
+            <button class="btn" id="clear-all">
+                Clear All
+            </button>
+            <br>
+            <p class="one-line">
+                <strong>
+                    Pass Word
+                </strong>
+            </p>
+            <button class="btn" id="start">
+                Generate
+            </button>
+        </div>
+
+        <script src="index.js"></script>
+        <script src="data.js"></script>
+    </div>
+</body>
+</html>
