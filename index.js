@@ -16,8 +16,7 @@ const getInputAll = () =>
 {
     for (let i = 0; i < data.inputs.path.length; i++)
     {
-        let clear = clearInput(data.inputs.variables[i].value);
-        data[data.inputs.path[i]].value = clear;
+        data[data.inputs.path[i]].value = clearInput(data.inputs.variables[i].value);
     }
 
     checkInput();
