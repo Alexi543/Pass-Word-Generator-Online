@@ -1,3 +1,11 @@
+const output = document.getElementById("output");
+const asciiLow = document.getElementById("letters-low");
+const asciiUpper = document.getElementById("letters-upper");
+const punctuation = document.getElementById("Punctuation");
+const numbers = document.getElementById("num");
+const space = document.getElementById("space");
+const passWords = document.getElementById("passwords-num");
+
 const data = {
     asciiLow: {
         default: 3,

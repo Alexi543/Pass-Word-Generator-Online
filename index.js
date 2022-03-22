@@ -1,11 +1,4 @@
 const buttons = document.querySelectorAll(".btn");
-const output = document.getElementById("output");
-const asciiLow = document.getElementById("letters-low");
-const asciiUpper = document.getElementById("letters-upper");
-const punctuation = document.getElementById("Punctuation");
-const numbers = document.getElementById("num");
-const space = document.getElementById("space");
-const passWords = document.getElementById("passwords-num");
 
 const randrange = (min = 0, max) =>
 {
@@ -33,7 +26,7 @@ const clearInput = (input) =>
 
         if (input !== []) 
         {
-            input = parseInt(String(input).replace(",", ""));
+            input = parseInt(String(input));
             return input;
         }
     }
