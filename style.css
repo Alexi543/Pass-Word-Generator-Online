@@ -45,8 +45,7 @@ input::placeholder
 {
     color: white;
     height: 300px;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: auto;
 }
 
 #inputs {

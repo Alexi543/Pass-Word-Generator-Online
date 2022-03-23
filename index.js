@@ -61,6 +61,8 @@ buttons.forEach(button =>
         {
             getInputAll();
 
+            output.innerHTML = "<p>Generate</p>";
+
             let allPassWords = "";
 
             for (let passWordGen = 1; passWordGen <= data.passWords.value; passWordGen++)
@@ -92,12 +94,12 @@ buttons.forEach(button =>
                     out += carater;
                 })
 
-                console.log(`${passWordGen}) ${out}`);
 
-                allPassWords += (`<h3>${passWordGen}) ${String(out)}</h3>`);
-
-                output.innerHTML = allPassWords;
+                // allPassWords += (`<p>${passWordGen}) ${String(out)}</p>`);
+                allPassWords += (`${passWordGen}) ${String(out)}<br><br>`);
             }
+
+            output.innerHTML = allPassWords;
 
             console.log(output);
         }
