@@ -26,7 +26,13 @@ const clearInput = (input) =>
 
         if (input !== []) 
         {
-            input = parseInt(String(input));
+            input = String(input);
+
+            for (let i = 0; i < input.split(",").length--; i++)
+            {
+                input = input.replace(",", "");
+            }
+
             return input;
         }
     }
@@ -85,16 +91,24 @@ buttons.forEach(button =>
                 {
                     out += carater;
                 })
-                
-                allPassWords += (`${passWordGen}) ${out}`);
-                allPassWords += "<br>"
+
+                console.log(`${passWordGen}) ${out}`);
+
+                allPassWords += (`<h3>${passWordGen}) ${String(out)}</h3>`);
+
+                output.innerHTML = allPassWords;
             }
 
-            output.innerHTML =  allPassWords;
-        } 
+            console.log(output);
+        }
         else if (button.id === "clear-all")
         {
-            
+            for (let input = 0; input < data.inputs.variables.length; input++)
+            {
+                console.log(data.inputs.variables[input]);
+            }
+
+            getInputAll();
         }
     })
 })
