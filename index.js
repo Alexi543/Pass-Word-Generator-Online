@@ -53,6 +53,14 @@ const checkInput = () =>
     })
 }
 
+const start = () =>
+{
+    for (let input = 0; input < data.inputs.variables.length; input++)
+    {
+        data.inputs.variables[input].value = data[data.inputs.path[input]].default;
+    }
+}
+
 buttons.forEach(button => 
 {
     button.addEventListener("click", Event => 
@@ -94,23 +102,21 @@ buttons.forEach(button =>
                     out += carater;
                 })
 
-
-                // allPassWords += (`<p>${passWordGen}) ${String(out)}</p>`);
-                allPassWords += (`${passWordGen}) ${String(out)}<br><br>`);
+                allPassWords += `${passWordGen}) ${out}<br><br>`;
             }
 
             output.innerHTML = allPassWords;
-
-            console.log(output);
         }
         else if (button.id === "clear-all")
         {
             for (let input = 0; input < data.inputs.variables.length; input++)
             {
-                console.log(data.inputs.variables[input]);
+                data.inputs.variables[input].value = data[data.inputs.path[input]].default;
             }
 
             getInputAll();
         }
     })
 })
+
+start();

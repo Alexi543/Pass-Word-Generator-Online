@@ -68,6 +68,8 @@ input::placeholder
     background-color: rgb(43, 39, 39);
     border-color: rgb(32, 29, 29);
     width: 100px;
+    padding: 3px;
+    margin: 10px;
 }
 
 #buttons
